@@ -1,4 +1,4 @@
 tareas_Javier
 =============
 
-Proyectos relacionados con la clase de Tecnologías Web 1
+Proyectos Tecnologías Web 1
