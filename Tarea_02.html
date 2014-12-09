@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Time</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<script type="text/javascript" charset="utf-8">
+			
+		</script>
+	</head>
+
+	<body>
+		
+		<style type="text/css">
+		
+			body{
+				background-color: #000;
+			}
+			
+			#texto{
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 200px;
+			}
+			
+		</style>
+		
+		<p id="texto">
+			
+		<script type="text/javascript">
+			
+			var currentTime = new Date()
+			var hours = currentTime.getHours()
+			var minutes = currentTime.getMinutes()
+		
+			if (minutes < 10){
+				minutes = "0" + minutes
+			}
+		
+			document.write(hours + ":" + minutes + " ")
+			
+			if(hours > 11){
+				document.write("PM");
+				document.body.style.background="#0E7AFE";
+				document.getElementById("texto").style.color="#FFF";
+				
+			} 
+			else {
+				document.write("AM");
+				document.body.style.background="#FC6C08";
+				document.getElementById("texto").style.color="#000";
+				
+			};
+			
+			// validate
+			
+			
+			
+		</script>
+		
+		</p>
+	</body>
+	
+</html>

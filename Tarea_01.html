@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Evaluación Incial</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<style>
+@charset "UTF-8";
+/* CSS Document */
+* {
+	font-family:"Comic Sans MS", cursive;}
+body {
+	background-color:#06F;
+	}
+	
+.h1 {
+	font-size:48px;
+	color:#FFF;
+	text-align:center;
+	margin: 40px 0 0 0;
+	}
+	
+.h2 {
+	font-size:24px;
+	color:#FFF;
+	text-align:center;
+	}
+	
+#boton {
+	width:50px;
+	height:50px;
+	background-color:#666;
+	position:fixed;
+	bottom:0px;
+	left:50%;
+	}
+	
+#box {
+	visibility: visible;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	position: fixed;
+    border: 30px solid #FFF;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+</style>
+
+<p class="h1">Evaluación Incial</p>
+<p class="h2">Tec Web 1</p>
+
+<div id="box"></div>
+<div id="boton"></div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$('#boton').click(function(){
+	
+	if ( $('#box').css('visibility') == 'hidden')
+  		$('#box').css('visibility','visible');
+	else
+    	$('#box').css('visibility','hidden');
+});
+</script>
+
+</body>
+</html>

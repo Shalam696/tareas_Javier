@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		
+		<style type="text/css">
+		
+			/* http://meyerweb.com/eric/tools/css/reset/ 
+		   	v2.0 | 20110126
+		   	License: none (public domain)
+			*/
+
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			/* HTML5 display-role reset for older browsers */
+			article, aside, details, figcaption, figure, 
+			footer, header, hgroup, menu, nav, section {
+				display: block;
+			}
+			body {
+				line-height: 1;
+				background-color:#333;
+			}
+			ol, ul {
+				list-style: none;
+			}
+			blockquote, q {
+				quotes: none;
+			}
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+				content: '';
+				content: none;
+			}
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			
+			h1,h2,h3,p {
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				
+				
+			}
+			
+			h1 {
+				font-size: 100px;
+				margin: 20px 0;
+				text-align: center;
+				color:#C03;
+			}
+			
+			h2 {
+				font-size: 40px;
+				margin: 20px 0;
+				text-align: center;
+				color:#CCC;
+			}
+			
+			h3 {
+				font-size:30px;
+				margin:10px 0;
+				float:left;
+				color:#CCC;
+				}
+			
+			#contender{
+				
+				height:100%;
+				width:750px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;   
+			}
+			
+			.cajas {
+				border: 0;
+				height: 50px;
+				width: 50px;
+				float: left;
+				margin: 0 30px;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 30px;
+				text-align: center;
+				background-color:#000;
+				color:#FFF;
+				outline: none;
+				}
+				
+			.cajasTotal {
+				border:0;
+				height: 50px;
+				width: 200px;
+				float: left;
+				margin: 0 25px;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 30px;
+				text-align: center;
+				background
+				color:#000;
+				outline: none;
+			}
+			
+			.boton {
+				
+				border: 0px;
+				color:#000;
+				background:#CCC;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 30px;
+				margin: 20px 60px;
+				outline: none;
+				
+				
+			}
+			
+				
+			#suma{
+				height:400px;
+				width:250px;
+				background-color:#666;
+				float: left;
+			}
+			
+			
+			
+			
+			#resta{
+				height:400px;
+				width:250px;
+                background-color:#666;
+				float: left;
+			}
+			#division{
+				height:400px;
+				width:250px;
+				background-color:#666;
+				float: left;
+			}
+			
+			
+				
+				
+		</style>
+		
+		
+		<script type="text/javascript" charset="utf-8">
+		
+		</script>
+		
+		
+	</head>
+
+	<body>
+				
+		<div id="contender">
+			<h1>Calculadora</h1>
+			<div id="suma">
+				
+				<h2>Suma</h2>
+                
+				<input type="text" maxlength="3" name="sumav1" id="sumav1" onkeypress="return isNumberKey(event)" class="cajas">
+                
+				<h3>+</h3>
+                
+				<input type="text" maxlength="3" name="sumav2" id="sumav2" onkeypress="return isNumberKey(event)" class="cajas";>
+                
+                <input id="calcularSuma" type="button" value="Calcular!" onclick="suma()" class="boton">
+				
+				<br>
+				
+				<input type="text" maxlength="9" name="totalSuma" disabled="disabled" id="totalSuma" class="cajasTotal" value="";>
+				
+                
+			</div>
+			
+			<div id="resta">
+				
+				<h2>Resta</h2>
+                
+				<input type="text" maxlength="3" name="restav1" id="restav1" onkeypress="return isNumberKey(event)" class="cajas";>
+                
+				<h3>-</h3>
+                
+				<input type="text" maxlength="3" name="restav1" id="restav2" onkeypress="return isNumberKey(event)" class="cajas";>
+                
+                <input id="calcularResta" type="button" value="Calcular!" onclick="resta()" class="boton">
+				
+				<br>
+				
+				<input type="text" maxlength="9" name="totalResta" disabled="disabled" id="totalResta" class="cajasTotal" value="";>
+			
+			</div>
+			
+			<div id="division">
+			
+				<h2>Division</h2>
+                
+				<input type="text" maxlength="3" name="diviv1" id="diviv1" onkeypress="return isNumberKey(event)" class="cajas";>
+                
+				<h3/>/</h3>
+                
+				<input type="text" maxlength="3" name="diviv2" id="diviv2" onkeypress="return isNumberKey(event)" class="cajas";>
+                
+                <input id="calcularDivi" type="button" value="Calcular!" onclick="division()" class="boton">
+				
+				<br>
+				
+				<input type="text" maxlength="9" name="totalDivi" disabled="disabled" id="totalDivi" class="cajasTotal" value="";>
+			
+			</div>
+		</div>
+		
+		
+		
+		<script type="text/javascript" charset="utf-8">
+		
+		function isNumberKey(evt){
+    		var charCode = (evt.which) ? evt.which : event.keyCode
+			
+    		if (charCode > 31 && (charCode < 48 || charCode > 57))
+        	return false;
+    		return true;
+		}
+		
+		function suma(){
+			document.getElementById("totalSuma").value = parseInt(document.getElementById("sumav1").value) + parseInt(document.getElementById("sumav2").value);	
+		};
+		
+		function resta(){
+			document.getElementById("totalResta").value = parseInt(document.getElementById("restav1").value) - parseInt(document.getElementById("restav2").value);
+		};
+		
+		function division(){
+			document.getElementById("totalDivi").value = parseInt(document.getElementById("diviv1").value) / parseInt(document.getElementById("diviv2").value);
+		};
+		
+		</script>
+	
+	
+	</body>
+	
+</html>
